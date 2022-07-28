@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Todo List</h1>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li>Inbox</li>
+                <li>Today</li>
+                <li>This week</li>
+            </ul>
+            <h2>Projects</h2>
+            <ul class="projects-list"></ul>
+            <p class="add-new">Add new +</p>
+            <form class="form-project">
+                <div id='input-project' class="input hide">
+                    <input name="project" class="project-title" placeholder="project name..." type="text" required>
+                    <button type="submit" class="addProjectBtn">Add Task</button>
+                    <button class="cancel cancel-project-btn">Cancel</button>
+                </div>
+            </form> 
+        </div>
+        <div class="content">
+            <h2 class="projectTitle"></h2>
+            <div class="tasks" id="Not categorized"></div>
+            <p class="add-task">Add new +</p>
+            <form class="form-task">
+                <div id='input-div' class="hide">
+                    <input name="input" class="task-title" placeholder="task name..." type="text" required>
+                    <button type="submit" class="addBtn">Add Task</button>
+                    <button class="cancel cancel-btn">Cancel</button>
+                </div>
+            </form>    
+        </div>
+    </div>
+    <div class="footer">
+        <p>dummy text</p>
+    </div>
+    
+
+    <script src="main.js"></script> 
+</body>
+</html>
