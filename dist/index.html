@@ -19,25 +19,31 @@
                 <li>This week</li>
             </ul>
             <h2>Projects</h2>
-            <ul class="projects-list"></ul>
-            <p class="add-new">Add new +</p>
+            <ul class="projects-list">
+                <!-- <li>Projekt 1 <span class="remove-project">🗑</span></li>
+                <li>Projekt 2 <span class="remove-project">🗑</span></li> -->
+            </ul>
+            <p class="add-project-btn">Add new +</p>
             <form class="form-project">
-                <div id='input-project' class="input hide">
+                <div id='input-project-div' class="input hide">
                     <input name="project" class="project-title" placeholder="project name..." type="text" required>
-                    <button type="submit" class="addProjectBtn">Add Task</button>
+                    <button type="submit" class="submit-project-btn">Add Task</button>
                     <button class="cancel cancel-project-btn">Cancel</button>
                 </div>
             </form> 
         </div>
-        <div class="content">
+        <div class="content hide">
             <h2 class="projectTitle"></h2>
-            <div class="tasks" id="Not categorized"></div>
-            <p class="add-task">Add new +</p>
+            <div class="tasks">
+                <!-- <div class="flex"><p class="done">Zadanie z dupy 1</p><span class="remove-project">🗑</span></div> -->
+            </div>
+            <p class="add-task-btn">Add new +</p>
             <form class="form-task">
-                <div id='input-div' class="hide">
+                <div id='input-task-div' class="hide">
                     <input name="input" class="task-title" placeholder="task name..." type="text" required>
-                    <button type="submit" class="addBtn">Add Task</button>
-                    <button class="cancel cancel-btn">Cancel</button>
+                    <input type="date" required>
+                    <button type="submit" class="submit-task-btn">Add Task</button>
+                    <button class="cancel cancel-task-btn">Cancel</button>
                 </div>
             </form>    
         </div>

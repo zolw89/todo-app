@@ -61,7 +61,7 @@ ul li {
     display: none;
 }
 
-.add-new {
+.add-project-btn {
     padding: 8px;
 }
 
@@ -109,4 +109,23 @@ input {
 
 .hide {
     display: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.done {
+    text-decoration: line-through;
+    color: var(--grey);
+}
+
+.selected {
+    font-weight: 900;
+}
+
+.flex p {
+    padding-right: 20px;
 }
