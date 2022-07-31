@@ -120,7 +120,7 @@ projectList.addEventListener('click', (e) => {
 })
 
 taskList.addEventListener('click', (e) => {
-    if(e.target.tagName.toLowerCase() === 'p') {
+    if(e.target.tagName.toLowerCase() === 'p') {  
         selectedTask = e.target.id;
         renderProject()
         save()
@@ -180,25 +180,89 @@ const renderTask = () => {
     }
 
     taskList.innerHTML = ''
+    addTaskBtn.style.display = ''
     const selectedProjectArr = todoList.find(task => task.category === selectedProject)
-    selectedProjectArr.tasks.forEach(task => {
-        const taskItem = document.createElement('div');
-        taskItem.classList.add('flex')
-        const taskTitle = document.createElement('p')
-        taskTitle.id = task.name
-        taskTitle.textContent = `${task.name}, due Date: ${task.date}`;
-        const taskSpan = document.createElement('span')
-        taskSpan.classList.add('remove-task')
-        taskSpan.textContent = '🗑'
-        if (task.name === selectedTask) {
-            taskTitle.classList.add('selected')
-        }
-        taskItem.append(taskTitle, taskSpan)
-        taskList.appendChild(taskItem)
+    if(selectedProjectArr.tasks.length > 0) {
+        selectedProjectArr.tasks.forEach(task => {
+            const taskItem = document.createElement('div');
+            taskItem.classList.add('flex')
+            const taskTitle = document.createElement('p')
+            taskTitle.id = task.name
+            taskTitle.textContent = `${task.name}, due Date: ${task.date}`;
+            const taskSpan = document.createElement('span')
+            taskSpan.classList.add('remove-task')
+            taskSpan.textContent = '🗑'
+            if (task.name === selectedTask) {
+                taskTitle.classList.add('selected')
+            }
+            taskItem.append(taskTitle, taskSpan)
+            taskList.appendChild(taskItem)
+        })
+    }
+}
+const inboxDiv = document.querySelector('.inbox')
 
+const renderInbox = () => {
+    taskList.innerHTML = ''
+    selectedProject = null;
+    selectedTask = null;
+    taskListDiv.classList.remove('hide')
+    projectTitle.textContent = 'Inbox'
+    addTaskBtn.style.display = 'none'
+    todoList.forEach(list => {
+        list.tasks.forEach(task => {
+            const taskItem = document.createElement('div');
+            const taskTitle = document.createElement('h3')
+            const TaskCategory = document.createElement('h3')
+            const TaskDate = document.createElement('h3')
+            taskTitle.id = task.name
+            taskTitle.textContent = `TASK NAME: ${task.name};`
+            TaskCategory.textContent = `CATEGORY: ${list.category}`;
+            TaskDate.textContent = `DUE DATE: ${task.date}`
+            if (task.name === selectedTask) {
+                taskTitle.classList.add('selected')
+            }
+            taskItem.append(taskTitle, TaskCategory, TaskDate)
+            taskList.appendChild(taskItem)
+        })
     })
 }
 
+inboxDiv.addEventListener('click', renderInbox)
 
-renderTask()
+const todayDiv = document.querySelector('.today')
+
+const renderToday = () => {
+    taskList.innerHTML = ''
+    let today = format(new Date(), 'yyyy-MM-dd')
+    selectedProject = null;
+    selectedTask = null;
+    taskListDiv.classList.remove('hide')
+    projectTitle.textContent = 'Today'
+    addTaskBtn.style.display = 'none'
+    todoList.forEach(list => {
+        list.tasks.forEach(task => {
+            if(task.date === today) {
+                const taskItem = document.createElement('div');
+                const taskTitle = document.createElement('h3')
+                const TaskCategory = document.createElement('h3')
+                const TaskDate = document.createElement('h3')
+                taskTitle.id = task.name
+                taskTitle.textContent = `TASK NAME: ${task.name};`
+                TaskCategory.textContent = `CATEGORY: ${list.category}`;
+                TaskDate.textContent = `DUE DATE: ${task.date}`
+                if (task.name === selectedTask) {
+                    taskTitle.classList.add('selected')
+                }
+                taskItem.append(taskTitle, TaskCategory, TaskDate)
+                taskList.appendChild(taskItem)
+            }
+        })
+    })
+}
+
+todayDiv.addEventListener('click', renderToday)
+
+
+renderInbox()
 renderProject()
