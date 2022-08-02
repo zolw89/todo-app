@@ -1,136 +1,161 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --light: #f4f4f9;
-    --main: rgb(18, 18, 18);
-    --dark: #2f4550;
-    --accent: #b8dbd9;
-    --grey: #586f7c;
+  --light: #f4f4f9;
+  --main: rgb(18, 18, 18);
+  --dark: #2f4550;
+  --accent: #b8dbd9;
+  --grey: #586f7c;
 }
 
 body {
-    background-color: var(--light);
-    font-size: 20px;
-    color: var(--light);
+  background-color: var(--light);
+  font-size: 20px;
+  color: var(--light);
 }
 
 .header {
-    background-color: var(--dark);
+  background-color: var(--dark);
+}
+
+.hamburger {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  display: none;
+  color: var(--light);
 }
 
 h1 {
-    font-size: 52px;
-    text-align: center;
-    padding: 24px 0;
+  font-size: 52px;
+  text-align: center;
+  padding: 24px 0;
 }
 
 h2 {
-    padding-top: 32px;
-    padding-bottom: 16px;
+  padding-top: 32px;
+  padding-bottom: 16px;
 }
 
 h3 {
-    font-weight: 400;
-    font-size: 20px;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 .main {
-    display: flex;
+  display: flex;
 }
 
 .sidebar {
-    min-width: 250px;
-    padding: 20px;
-    max-width: 300px;
-    background-color: var(--grey);
-    min-height: calc(100vh - 108px - 46.4px);
+  min-width: 250px;
+  padding: 20px;
+  background-color: var(--grey);
+  min-height: calc(100vh - 108px - 46.4px);
 }
 
-
 ul li {
-    list-style: none;
-    padding:8px;
+  list-style: none;
+  padding: 8px;
 }
 
 .footer {
-    background-color: var(--dark);
-    text-align: center;
-    padding: 12px 0;
+  background-color: var(--dark);
+  text-align: center;
+  padding: 12px 0;
 }
 
 .new-projects {
-    display: none;
+  display: none;
 }
 
 .add-project-btn {
-    padding: 8px;
+  padding: 8px;
 }
 
-
-
 .content {
-    color: var(--dark);
-    padding: 20px 50px;
+  color: var(--dark);
+  padding: 20px 50px;
+  min-height: calc(100vh - 108px - 46.4px);
 }
 
 .content div {
-    padding-bottom: 12px;
+  padding-bottom: 12px;
 }
 
 button {
-    background-color: var(--accent);
-    color: var(--dark);
-    font-size: 16px;
-    border: 2px solid var(--dark);
-    padding: 8px 16px;
-    border-radius: 20px;
+  background-color: var(--accent);
+  color: var(--dark);
+  font-size: 16px;
+  border: 2px solid var(--dark);
+  padding: 8px 16px;
+  border-radius: 20px;
 }
 
 .cancel {
-    background-color: var(--dark);
-    color: var(--light);
-    font-size: 16px;
-    border: 2px solid var(--accent);
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 16px;
+  border: 2px solid var(--accent);
 }
 
 input {
-    background-color: var(--light);
-    color: var(--dark);
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 2px solid var(--dark);
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--dark);
 }
 
 .input {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    padding: 8px ;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .done {
-    text-decoration: line-through;
-    color: var(--grey);
+  text-decoration: line-through;
+  color: var(--grey);
 }
 
 .selected {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 .flex p {
-    padding-right: 20px;
+  padding-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    min-width: auto;
+    width: 100%;
+    min-height: fit-content;
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    z-index: 10;
+  }
+  .main {
+    flex-direction: column;
+  }
+
+  .active {
+    display: block;
+  }
 }

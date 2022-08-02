@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
     <div class="header">
-        <h1>Todo List</h1>
+      <div class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+          <path
+            fill="currentColor"
+            d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z"
+          />
+        </svg>
+      </div>
+      <h1>Todo List</h1>
     </div>
     <div class="main">
-        <div class="sidebar">
-            <ul>
-                <li class="inbox">Inbox</li>
-                <li class="today">Today</li>
-            </ul>
-            <h2>Projects</h2>
-            <ul class="projects-list">
-                <!-- <li>Projekt 1 <span class="remove-project">🗑</span></li>
+      <div class="sidebar">
+        <ul>
+          <li class="inbox">Inbox</li>
+          <li class="today">Today</li>
+        </ul>
+        <h2>Projects</h2>
+        <ul class="projects-list">
+          <!-- <li>Projekt 1 <span class="remove-project">🗑</span></li>
                 <li>Projekt 2 <span class="remove-project">🗑</span></li> -->
-            </ul>
-            <p class="add-project-btn">Add new +</p>
-            <form class="form-project">
-                <div id='input-project-div' class="input hide">
-                    <input name="project" class="project-title" placeholder="project name..." type="text" required>
-                    <button type="submit" class="submit-project-btn">Add Task</button>
-                    <button class="cancel cancel-project-btn">Cancel</button>
-                </div>
-            </form> 
+        </ul>
+        <p class="add-project-btn">Add new +</p>
+        <form class="form-project">
+          <div id="input-project-div" class="input hide">
+            <input
+              name="project"
+              class="project-title"
+              placeholder="project name..."
+              type="text"
+              required
+            />
+            <button type="submit" class="submit-project-btn">Add Task</button>
+            <button class="cancel cancel-project-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+      <div class="content hide">
+        <h2 class="projectTitle"></h2>
+        <div class="tasks">
+          <!-- <div class="flex"><p class="done">Zadanie z dupy 1</p><span class="remove-project">🗑</span></div> -->
         </div>
-        <div class="content hide">
-            <h2 class="projectTitle"></h2>
-            <div class="tasks">
-                <!-- <div class="flex"><p class="done">Zadanie z dupy 1</p><span class="remove-project">🗑</span></div> -->
-            </div>
-            <p class="add-task-btn">Add new +</p>
-            <form class="form-task">
-                <div id='input-task-div' class="hide">
-                    <input name="input" class="task-title" placeholder="task name..." type="text" required>
-                    <input type="date" required>
-                    <button type="submit" class="submit-task-btn">Add Task</button>
-                    <button class="cancel cancel-task-btn">Cancel</button>
-                </div>
-            </form>    
-        </div>
+        <p class="add-task-btn">Add new +</p>
+        <form class="form-task">
+          <div id="input-task-div" class="hide">
+            <input
+              name="input"
+              class="task-title"
+              placeholder="task name..."
+              type="text"
+              required
+            />
+            <input type="date" required />
+            <button type="submit" class="submit-task-btn">Add Task</button>
+            <button class="cancel cancel-task-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="footer">
-        <p>dummy text</p>
+      <p>dummy text</p>
     </div>
-    
 
-    <script src="main.js"></script> 
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
